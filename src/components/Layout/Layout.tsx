@@ -1,6 +1,5 @@
 import { ReactNode, VFC } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import { HeaderLink } from '../HeaderLink/HeaderLink';
 
