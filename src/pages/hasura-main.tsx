@@ -6,7 +6,9 @@ import { GetUsersQuery } from '../types/generated/graphql';
 import { Layout } from '../components/Layout/Layout';
 
 const UserList: NextPage = (): JSX.Element => {
-  const { data, error } = useQuery<GetUsersQuery>(GET_USER);
+  const { data, error } = useQuery<GetUsersQuery>(GET_USER, {
+    fetchPolicy: 'network-only'
+  });
 
   if(error) {
     return (

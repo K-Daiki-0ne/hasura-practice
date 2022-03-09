@@ -12,7 +12,7 @@ export const GET_USER = gql`
 `
 
 // Apollo Serverに保管されているユーザー情報を取得する(状態管理に似たもの)
-export const GET_USER_LOVAL = gql`
+export const GET_USER_LOCAL = gql`
   query GetUsers {
     users(order_by: {createdAt: desc}) @client {
       createdAt
