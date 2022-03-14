@@ -10,12 +10,12 @@ type Props = {
 
 export const Layout: VFC<Props> = ({ children, title }) => {
   return (
-    <div className='flex flex-col justify-center items-center min-h-screen text-green-600 text-sm font-mono'>
+    <div className='flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono'>
       <Head>
         <title>{ title }</title>
       </Head>
       <header>
-        <nav className='bg-grey-800 w-screen'>
+        <nav className='bg-gray-800 w-screen'>
           <div className='flex items-center pl-8 h-14'>
             <div className='flex space-x-4'>
               <HeaderLink 

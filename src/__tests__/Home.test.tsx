@@ -5,8 +5,9 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Home from '../pages';
+import 'setimmediate'
 
 it('Should render title text', () => {
   render(<Home />)
-  expect(screen.getByText('Next.js!')).toBeInTheDocument()
+  expect(screen.getByText('NextJS + GraphQL with Hasura(Cloud)')).toBeInTheDocument()
 })
