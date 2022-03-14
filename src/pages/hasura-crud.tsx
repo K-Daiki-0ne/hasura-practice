@@ -15,6 +15,7 @@ import {
   UpdateUserMutation
 } from '../types/generated/graphql';
 import { Layout } from '../components/Layout/Layout';
+import { UserItem } from '../components/UserItem/UserItem';
 
 const HasuraCrud: NextPage = () => {
   const [editorUser, setEditorUser] = useState({ id: '', name: '', email: '', password: ''  });
@@ -105,25 +106,25 @@ const HasuraCrud: NextPage = () => {
           type='text'
           value={editorUser.name}
           onChange={(e: any) => {
-            setEditorUser({ ...editorUser, name: editorUser.name })
+            setEditorUser({ ...editorUser, name: e.target.value })
           }}
         />
         <input 
-          className='px-3 py-2 border border-gray-300'
+          className='px-3 py-2 border border-gray-300 mt-2'
           placeholder='New email ?'
           type='email'
           value={editorUser.email}
           onChange={(e: any) => {
-            setEditorUser({ ...editorUser, name: editorUser.email })
+            setEditorUser({ ...editorUser, email: e.target.value })
           }}
         />
         <input 
-          className='px-3 py-2 border border-gray-300'
+          className='px-3 py-2 border border-gray-300 mt-2'
           placeholder='New password ?'
-          type='email'
+          type='password'
           value={editorUser.password}
           onChange={(e: any) => {
-            setEditorUser({ ...editorUser, name: editorUser.password })
+            setEditorUser({ ...editorUser, password: e.target.value })
           }}
         />
         <button
@@ -135,6 +136,16 @@ const HasuraCrud: NextPage = () => {
           {editorUser.id ? 'Update' : 'Create'}
         </button>
       </form>
+      {data?.users.map((user: any) => {
+        return (
+          <UserItem 
+            key={user.id}
+            user={user}
+            setEditedUser={setEditorUser}
+            delete_users_by_pk={delete_users_by_pk}
+          />
+        )
+      })}
     </Layout>
   )
 };

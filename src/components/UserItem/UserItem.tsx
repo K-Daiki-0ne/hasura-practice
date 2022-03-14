@@ -16,16 +16,16 @@ type Props = {
   >
 }
 
-export const UserItem: FC<Props> = ({
+export const UserItem: FC<Props> = memo(({
   user,
   delete_users_by_pk,
   setEditedUser
 }): JSX.Element => (
   <div className='my-1'>
-    <p className='mr-2'>{user.name}</p>
-    <p className='mr-2'>{user.email}</p>
-    <p className='mr-2'>{user.password}</p>
-    <p className='mr-2'>{user.createdAt}</p>
+    <span className='mr-2'>{user.name}</span>
+    <span className='mr-2'>{user.email}</span>
+    <span className='mr-2'>{user.password}</span>
+    <span className='mr-2'>{user.createdAt}</span>
     <button
       className="mr-1 py-1 px-3 text-white bg-green-600 hover:bg-green-700 rounded-2xl focus:outline-none"
       data-testid={`edit-${user.id}`}
@@ -49,4 +49,4 @@ export const UserItem: FC<Props> = ({
       Delete
     </button>
   </div>
-)
+))
