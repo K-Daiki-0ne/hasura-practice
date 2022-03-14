@@ -16,6 +16,7 @@ type Props = {
   >
 }
 
+// eslint-disable-next-line react/display-name
 export const UserItem: FC<Props> = memo(({
   user,
   delete_users_by_pk,
