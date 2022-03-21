@@ -17,7 +17,7 @@ export const LocalState: FC = (): JSX.Element => {
       {
         todos.map((task, index) => {
           return (
-            <p className='mb-3 y-1'>{ task.title }</p>
+            <p className='mb-3 y-1' key={index}>{ task.title }</p>
           )
         })
       }

@@ -14,9 +14,9 @@ export const LocalStateView: FC = (): JSX.Element => {
           )
         })
       }
-    <link href='/local-state-a'>
+    <Link href='/local-state-a'>
       <a>back</a>
-    </link>
+    </Link>
     </>
   )
 }
