@@ -11,7 +11,7 @@ const createApolloClient = () => {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'https://well-gibbon-97.hasura.app/v1/graphql'
+      uri: 'https://********/graphql'
     }),
     cache: new InMemoryCache(),
   })
